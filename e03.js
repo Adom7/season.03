@@ -1,4 +1,5 @@
 const http = require('http');
+const fs   = require('fs');
 const port = process.argv[2]
 
 if (!port) {
@@ -7,7 +8,8 @@ if (!port) {
 }
 const requestListener = function (req, res) {
   res.writeHead(200);
-  res.end('<html><h1>Hello, World!</h1><html>');
+  const data = fs.readFileSync('/Users/adlaneould/Desktop/Efrei/Node/CodeFlix/onecode/season.03/content.html')
+  res.end(data);
   
 }
 
